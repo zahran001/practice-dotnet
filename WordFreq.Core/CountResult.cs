@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wordfreq
+namespace WordFreq.Core
 {
-	internal record CountResult(int TotalWords, Dictionary<string, int> Counts)
+	public record CountResult(int TotalWords, Dictionary<string, int> Counts)
 	{
 		public int UniqueWords => Counts.Count;
 
@@ -16,7 +16,4 @@ namespace wordfreq
 			.ThenBy(kv => kv.Key, StringComparer.Ordinal)
 			.Take(n);
 	}
-
-
-	
 }
