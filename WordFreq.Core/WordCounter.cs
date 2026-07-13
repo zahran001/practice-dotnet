@@ -2,7 +2,7 @@
 
 namespace WordFreq.Core;
 
-public sealed class WordCounter(WordFreqOptions options)
+public sealed class WordCounter(WordFreqOptions options) : IWordCounter
 {
 	private readonly StringComparer _comparer = options.IgnoreCase
 		? StringComparer.OrdinalIgnoreCase

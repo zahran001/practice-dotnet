@@ -34,7 +34,11 @@ internal sealed record CliArgs(string Path, int Top, WordFreqOptions Options)
 			}
 		}
 
-		return new CliArgs(path, top, new WordFreqOptions(minLength, ignoreCase));
+		return new CliArgs(path, top, new WordFreqOptions
+		{
+			MinLength = minLength,
+			IgnoreCase = ignoreCase
+		});
 	}
 
 	private static CliArgs? Fail(string message)
